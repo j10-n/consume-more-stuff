@@ -6,40 +6,32 @@ exports.seed = function(knex, Promise) {
       // Inserts seed entries
       return knex("users").insert([
         {
-          id: 1,
+          username: "Jimz-E",
           nameLast: "Lui",
           nameFirst: "Jimzy",
           email: "Jimzy.Lui@gmail.com",
-          hashedPassword: "asdfasfaf",
-          phone: "8084219969",
-          verified_YN: "Y"
+          hashedPassword: "asdfasfaf"
         },
         {
-          id: 2,
+          username: "J10",
           nameLast: "Nakamoto",
           nameFirst: "Justen",
           email: "Justen.Nakamoto@gmail.com",
-          hashedPassword: "asdfasfaf",
-          phone: "8084219969",
-          verified_YN: "Y"
+          hashedPassword: "asdfasfaf"
         },
         {
-          id: 3,
+          username: "T-Dogg",
           nameLast: "Taydus",
           nameFirst: "Tyler",
           email: "Tyler.Taydus@gmail.com",
-          hashedPassword: "asdfasfaf",
-          phone: "8084219969",
-          verified_YN: "Y"
+          hashedPassword: "asdfasfaf"
         },
         {
-          id: 4,
+          username: "Buddhason",
           nameLast: "Shiigi",
           nameFirst: "Ronson",
           email: "Ronson.Shiigi@gmail.com",
-          hashedPassword: "asdfasfaf",
-          phone: "8084219969",
-          verified_YN: "Y"
+          hashedPassword: "asdfasfaf"
         }
       ]);
     });
