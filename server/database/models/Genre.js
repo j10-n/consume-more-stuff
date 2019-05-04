@@ -9,4 +9,4 @@ class User extends bookshelf.Model {
   }
 }
 
-module.exports = bookshelf.model("Genres", Genres);
+module.exports = bookshelf.model("Genre", Genre);
