@@ -42,6 +42,34 @@ router
       });
   });
 
+router.post("/edit/:id", (req, res) => {
+  let postId = req.params.id;
+  let image = req.body.image;
+  let title = req.body.title;
+  let description = req.body.description;
+  let genre = req.body.genre;
+  let userId = req.body.userId;
+  let created_at = req.body.created_at;
+  let updated_on = req.body.updated_on;
+  console.log("title", title);
+  return new req.database.Post({
+    id: postId,
+    image,
+    title,
+    description,
+    genre,
+    userId,
+    created_at,
+    updated_on
+  })
+    .save()
+    .then(res.send("it worked?"))
+    .catch(err => {
+      console.log("error", err);
+      res.sendStatus(500);
+    });
+});
+
 router.post("/delete/:id", (req, res) => {
   let id = req.params.id;
   console.log(id);
@@ -55,4 +83,5 @@ router.post("/delete/:id", (req, res) => {
       res.sendStatus(500);
     });
 });
+
 module.exports = router;
