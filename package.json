@@ -4,6 +4,7 @@
   "description": "> A custom CMS for personal product sale",
   "main": "deploy-dev.js",
   "scripts": {
+    "format": "prettier \"src/* */*.{js,html}\" --write",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,6 +18,7 @@
   },
   "homepage": "https://github.com/j10-n/consume-more-stuff#readme",
   "dependencies": {
+    "auth0-js": "^9.10.2",
     "body-parser": "^1.19.0",
     "bookshelf": "^0.14.2",
     "connect-redis": "^3.4.1",
@@ -24,11 +26,18 @@
     "express": "^4.16.4",
     "express-session": "^1.16.1",
     "knex": "^0.16.5",
+    "mailgun": "^0.5.0",
     "nodemon": "^1.19.0",
     "passport": "^0.4.0",
     "pg": "^7.10.0",
     "react": "^16.8.6",
+    "react-bootstrap": "^1.0.0-beta.8",
     "react-dom": "^16.8.6",
+    "react-router": "^5.0.0",
+    "react-router-dom": "^5.0.0",
     "react-scripts": "^3.0.0"
+  },
+  "devDependencies": {
+    "prettier": "^1.17.0"
   }
 }

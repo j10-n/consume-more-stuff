@@ -5,4 +5,4 @@ const Post = require('./models/Post');
 module.exports = function(req, res, next) {
   req.database = { User, Genre, Post };
   next();
-}
+};

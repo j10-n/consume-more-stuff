@@ -1,4 +1,4 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
 
 router.route('/')
@@ -34,10 +34,9 @@ router.route('/')
     .then((posts) => {
       return res.json({ success: true });
     })
-    .catch((err) => {
+    .catch(err => {
       console.log(err);
       res.sendStatus(500);
     });
-})
-
+});
 module.exports = router;

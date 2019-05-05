@@ -5,7 +5,7 @@ exports.up = function(knex, Promise) {
     table.string("nameLast");
     table.string("nameFirst");
     table.string("email").unique();
-    table.string("hashedPassword");
+    table.string("hashedPassword", 100);
   });
 };
 
