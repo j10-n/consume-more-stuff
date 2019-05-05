@@ -10,28 +10,28 @@ exports.seed = function(knex, Promise) {
           nameLast: "Lui",
           nameFirst: "Jimzy",
           email: "Jimzy.Lui@gmail.com",
-          hashedPassword: "asdfasfaf"
+          password: "asdfasfaf"
         },
         {
           username: "J10",
           nameLast: "Nakamoto",
           nameFirst: "Justen",
           email: "Justen.Nakamoto@gmail.com",
-          hashedPassword: "asdfasfaf"
+          password: "asdfasfaf"
         },
         {
           username: "T-Dogg",
           nameLast: "Taydus",
           nameFirst: "Tyler",
           email: "Tyler.Taydus@gmail.com",
-          hashedPassword: "asdfasfaf"
+          password: "asdfasfaf"
         },
         {
           username: "Buddhason",
           nameLast: "Shiigi",
           nameFirst: "Ronson",
           email: "Ronson.Shiigi@gmail.com",
-          hashedPassword: "asdfasfaf"
+          password: "asdfasfaf"
         }
       ]);
     });
