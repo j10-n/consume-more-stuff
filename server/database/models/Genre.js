@@ -1,6 +1,6 @@
 const bookshelf = require("../bookshelf");
 
-class User extends bookshelf.Model {
+class Genre extends bookshelf.Model {
   get tableName() {
     return "genres";
   }

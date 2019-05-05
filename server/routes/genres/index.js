@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-router.route('/genres')
+router.route('/')
 .get((req, res) => {
   return new req.database.Genre().fetchAll()
     .then((genres) => {
@@ -13,7 +13,13 @@ router.route('/genres')
     });
 })
 .post((req, res) => {
-  return new req.database.Genre(req.body).save()
+  let name = req.body.name;
+  console.log('name', name)
+  
+  return new req.database.Genre({ 
+    name 
+  })
+    .save()
     .then((genres) => {
       return res.json({ success: true });
     })
