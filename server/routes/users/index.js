@@ -36,4 +36,28 @@ router.route('/')
     });
 })
 
+router.post('/edit/:id', (req, res) => {
+  let userId = req.params.id;
+  let username = req.body.username;
+  let nameLast = req.body.nameLast;
+  let nameFirst = req.body.nameFirst;
+  let email = req.body.email;
+  let hashedPassword = req.body.hashedPassword;
+
+  return new req.database.User({
+    id: userId,
+    username,
+    nameLast,
+    nameFirst,
+    email,
+    hashedPassword
+  })
+  .save()
+  .then(res.send('user edited'))
+  .catch(err => {
+    console.log('error',err);
+    res.sendStatus(500);
+  })
+})
+
 module.exports = router;
