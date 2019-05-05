@@ -17,14 +17,14 @@ router.route('/')
   let nameLast = req.body.nameLast;
   let nameFirst = req.body.nameFirst;
   let email = req.body.email;
-  let hashedPassword = req.body.hashedPassword;
+  let password = req.body.password;
   
   return new req.database.User({
     username,
     nameLast,
     nameFirst,
     email,
-    hashedPassword
+    password
   })
   .save()
     .then((users) => {
@@ -42,7 +42,7 @@ router.post('/edit/:id', (req, res) => {
   let nameLast = req.body.nameLast;
   let nameFirst = req.body.nameFirst;
   let email = req.body.email;
-  let hashedPassword = req.body.hashedPassword;
+  let password = req.body.password;
 
   return new req.database.User({
     id: userId,
@@ -50,7 +50,7 @@ router.post('/edit/:id', (req, res) => {
     nameLast,
     nameFirst,
     email,
-    hashedPassword
+    password
   })
   .save()
   .then(res.send('user edited'))
