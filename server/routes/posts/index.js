@@ -8,7 +8,7 @@ router
       .fetchAll()
       .then(posts => {
         res.json(posts);
-        return res.json(posts);
+        // return res.json(posts);
       })
       .catch(err => {
         console.log(err);
@@ -27,4 +27,17 @@ router
       });
   });
 
+router.post("/delete/:id", (req, res) => {
+  let id = req.params.id;
+  console.log(id);
+  return new req.database.Post({ id })
+    .destroy()
+    .then(data => {
+      return res.json(data);
+    })
+    .catch(err => {
+      console.log(err);
+      res.sendStatus(500);
+    });
+});
 module.exports = router;
