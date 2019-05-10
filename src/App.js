@@ -1,98 +1,68 @@
-import React, { Component } from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, NavLink, Route, Switch, Redirect, Prompt } from 'react-router-dom';
 
-import Home from "./pages/home";
-import MyPosts from "./pages/my-posts";
-import MyProfile from "./pages/my-profile";
-import Login from "./pages/login";
+import './scss/styles.scss';
+import AdminComponent from './components/AdminComponent';
+import HeaderComponent from './components/HeaderComponent';
+import CategoriesComponent from './components/CategoriesComponent';
+import PostsComponent from './components/PostsComponent';
+import ProfileComponent from './components/ProfileComponent';
+import ContactComponent from './components/ContactComponent';
+import AboutComponent from './components/AboutComponent';
+import LoginComponent from './components/LoginComponent';
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      posts: []
-    };
-  }
+// sample data (header info not really being used)
+import {
+  arrHeaders,
+  arrUsers,
+  arrPosts,
+  arrCategories
+} from './feSettings.js';
 
-  getPosts() {
-    fetch("/posts")
-      .then(res => {
-        // let data = res.json();
-        return res.json(res);
-      })
-      .then(body => {
-        console.log("body", body);
+// import AppState from './components/AppState';
 
-        this.setState({ posts: body.data });
-      });
-  }
+console.log("arrPosts", arrPosts);
+console.log("arrCategories", arrCategories);
 
-  componentDidMount() {
-    this.getPosts();
+// views using sample data
+const objUser = arrUsers.filter(x => x.id == 1).pop();
+console.log('objUser', objUser);
+const MyProfilePage = (props) => <ProfileComponent objUser={objUser} />;
+const CategoriesPage = (props) => <CategoriesComponent arrCategories={arrCategories} />;
+const AboutPage = (props) => <AboutComponent />;
+const HomePage = (props) => <PostsComponent arrPosts={arrPosts} />;
+
+// application entry component
+class App extends React.Component {
+  constructor() {
+    super();
   }
 
   render() {
-    console.log("state", this.state);
-    let arr = this.state.posts;
-    console.log(arr);
-
-    // const { posts } = this.props;
-    // let propData = props;
-    // if (!propData) {
-    //   propData = [];
-    // }
-
     return (
-      <div name="App">
+      <Router>
         <div>
-          {arr.map(post => (
-            <Post
-              title={post.title}
-              description={post.description}
-              image={post.image}
-            />
-          ))}
-
-          <footer className="py-5 bg-dark">
-            <div className="container">
-              <p className="m-0 text-center text-white">
-                Copyright &copy; Your Website 2019
-              </p>
-            </div>
-          </footer>
+          <HeaderComponent {...arrHeaders} />
+          {/* Linking R O U T E S TO COMPONENTS */}
+          <div className="views">
+            <Switch>
+              <Route exact={true} path="/" component={HomePage} />
+              <Route path="/about" component={AboutPage} />
+              <Route path="/contact" component={ContactComponent} />
+              <Route path="/posts/:userId" component={HomePage} />
+              <Route path="/users/:id" component={MyProfilePage} />
+              <Route path="/genres" component={CategoriesPage} />
+              <Route path="/admin" component={AdminComponent} />
+              <Route path="/login" component={LoginComponent} />
+              <Route render={() => <h1>404 Error</h1>} />
+            </Switch>
+          </div>
         </div>
-      </div>
+      </Router>
     );
   }
 }
-function Post(props) {
-  return (
-    <div className="Posts">
-      <div className="row">
-        <div className="col-lg-4 col-sm-6 mb-4">
-          <div className="card h-100">
-            <a href="#">
-              <img className="card-img-top" src="" alt="" />
-            </a>
-            <div className="">
-              <h4 className="">
-                <a href="#">{props.title}</a>
-              </h4>
-              <p className="card-text">{props.description}</p>
 
-              <div className="col-lg-4 col-sm-6 mb-4">
-                <div className="card h-100">
-                  <a href="#">
-                    <img className="card-img-top" src={props.image} alt="" />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-export default App;
+
+ReactDOM.render(<App />, document.getElementById('root'));
