@@ -7,12 +7,18 @@ router
     return new req.database.Post()
       .fetchAll()
       .then(posts => {
-        res.json(posts);
-        return res.json(posts);
+        console.log("posts", posts);
+        // let data = [];
+        let arr = posts.models;
+        // for (var i = 0; i < arr.length; i++) {
+        //   data.push(arr[i]._previousAttributes);
+        // }
+        // console.log("CLOSE", data);
+        return res.json({ data: arr });
       })
       .catch(err => {
         console.log(err);
-        res.sendStatus(500);
+        return res.sendStatus(500);
       });
   })
   .post((req, res) => {

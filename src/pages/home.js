@@ -7,6 +7,13 @@ import "../vendor/bootstrap/css/bootstrap.css.map";
 import "../vendor/bootstrap/css/bootstrap.min.css";
 import "../vendor/bootstrap/css/bootstrap.min.css";
 
+import "../vendor/bootstrap/jquery/jquery.js";
+import "../vendor/bootstrap/jquery/jquery.min.js";
+import "../vendor/bootstrap/jquery/jquery.min.map";
+import "../vendor/bootstrap/jquery/jquery.slim.js";
+import "../vendor/bootstrap/jquery/jquery.min.js";
+import "../vendor/bootstrap/jquery/jquery.min.map";
+
 function Home() {
   return (
     <div className="Home">
