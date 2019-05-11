@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card } from 'react-bootstrap';
+import { Card, Button, Form } from 'react-bootstrap';
 import '../scss/styles.scss';
 
 class ProfileComponent extends Component {
@@ -27,22 +27,31 @@ class ProfileComponent extends Component {
     // }
     // if(header){
     const name = nameFirst + ' ' + nameLast;
-    cardHeader = <Card.Header>{name}</Card.Header>
+    cardHeader = <Card.Header className='cardHeader'>{name}</Card.Header>
     // };
     return (
-      <div className='profilePage card' bg="dark" variant="dark">
-        <h1>Profile Page</h1>
-        <Card style={{ width: '18rem' }}>
+      <div className='profilePage cardPanel' bg="dark" variant="dark">
+        <h1>My Profile</h1>
+        <Card className='card' style={{ width: '18rem' }}>
           {cardHeader}
           {cardImage}
-          <Card.Body>
-            <Card.Title>UserName: {username}</Card.Title>
-            <Card.Subtitle className="mb-2 text-muted">Email: {email}</Card.Subtitle>
-            <Card.Text>
+          <Card.Body className='cardBody'>
+            <Card.Title className='cardTitle'>UserName: {username}</Card.Title>
+            <Card.Subtitle className="mb-2 text-muted cardSubtitle">Email: {email}</Card.Subtitle>
+            <Card.Text className='cardText'>
               {description}
             </Card.Text>
           </Card.Body>
-          <Card.Footer>UserId:{userId}</Card.Footer>
+          <Card.Footer className='cardFooter'>
+            <span>
+              <Form>
+                <Button type='submit' formaction="/users/{{userId}}/edit" formmethod="GET">Edit</Button>
+              </Form>
+            </span>
+            <span>
+              Account#:HI96734{userId}
+            </span>
+          </Card.Footer>
         </Card>
       </div>
     );

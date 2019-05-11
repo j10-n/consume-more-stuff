@@ -41,8 +41,9 @@ app.use(decorator);
 app.use("/users", userRoutes);
 app.use("/posts", postRoutes);
 app.use("/genres", genreRoutes);
+app.use("/", postRoutes);
 
 // start server
 app.listen(PORT, () => {
-  console.log(`Server stated on port: ${PORT}`);
+  console.log(`Server started on port: ${PORT}`);
 });

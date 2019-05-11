@@ -14,7 +14,7 @@ class CategoriesComponent extends Component {
     console.log("CategoriesComponent:arrCategories: ", arrCategories);
     return (
       <div id='categories' bg="dark" variant="dark">
-        <BulletList h1='Categories' arrList={arrCategories} />
+        <BulletList h1='Genres' arrList={arrCategories} />
       </div>
     );
   }

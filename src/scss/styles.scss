@@ -3,24 +3,31 @@ body {
   box-sizing: border-box;
   width: 100%;
 }
+// Color Scheme
+$card: yellow;
+
+
 #root {
   // top: 0;
   margin: 0;
   padding: 0;
   width: 100%;
-  background: lightgoldenrodyellow !important;
+  // background: lightgoldenrodyellow !important;
+  background: rgb(134, 134, 109);
   #header {
     top:0 !important;
     width:100% !important;
     text-decoration: none;
   }
 }
+/*
 #app{
     margin: 0;
     padding: 0;
     font-size: 14px;
     font-family: -apple-system, sans-serif;
-    color: #111;
+    // color: #111;
+    color: rgb(176, 179, 137);
     background-color: #eee;
 
 
@@ -29,13 +36,16 @@ body {
     align-items: center;
     text-align: center;
     font-weight: 300;
+}*/
+h1 {
+  text-align: center;
 }
 #categories{
   border: 1px solid rgb(172, 197, 172);
   // background: rgb(175, 202, 192);
 
   background: lightgoldenrodyellow !important;
-  color: rgb(133, 90, 11);
+  color: rgb(133, 90, 11) !important;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,7 +56,7 @@ body {
   padding-bottom: 10px;
   border-bottom: 1px solid #ddd;
   margin-bottom: 20px;
-  color: rgb(245, 247, 241);
+  color: rgb(133, 90, 11) !important;
   .link{
       color: rgb(245, 247, 241);
       font-weight: 500;
@@ -56,13 +66,14 @@ body {
 
       &:hover{
           opacity: 0.75;
+          color:rgb(190, 202, 226);
       }
   }
 }
 
 .link.active{
-  color: rgb(8, 179, 85);
-  text-decoration: underline;
+  color: yellow;
+  // text-decoration: underline;
 }
 Nav, NavLink, Navbar {
   padding-bottom: 0px !important;
@@ -72,27 +83,66 @@ Nav{
   border: 1px solid white !important;
 }
 NavLink{
-  border: 1px solid red !important;
+  // border: 1px solid red !important;
+  // color: rgb(133, 90, 11) !important;
 }
-Navbar{
-  border: 1px solid blue !important;
+.navbar{
+  // border: 1px solid blue !important;
+  display: flex;
+  flex-flow: row nowrap;
+  padding: 0 0;
+  width: 100%;
 }
-Navbar {
-  padding: 0 0 !important;
-}
-Nav{
+.navbar-nav{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
   margin-bottom: 0 !important;
+  width: 100%;
 }
 
-#posts {
-  // have 2-3 cards per row
+#postsPanel{
   display: flex;
-  flex-flow:row wrap;
-  justify-content: flex-start;
+  flex-flow: column nowrap;
+  #posts {
+    // have 2-3 cards per row
+    display: flex;
+    flex-flow:row wrap;
+    justify-content: flex-start;
+  }
 }
-.post, .card {
-  margin: 10px;
+ .card {
+  margin: 15px;
+  // padding: 15px;
+  background: yellow;
+  .cardHeader{
+    color:blue;
+    font-weight: 700;
+    text-align:center;
+    font-size:36px;
+    font-size-adjust: 0.5;
+    background:darken( $card, 10% );
+  }
+  .cardBody{
+    background: white;
+    color: gray;
+    .cardText{
+      color: blue;
+    }
+    padding: 10px;
+  }
+  .cardFooter{
+    background: lightgray;
+    color: darkolivegreen;
+    text-align:right;
+    font-size: 18px;
+    padding: 5px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  }
 }
+
 .bulletList {
   display: flex;
   flex-flow: column nowrap;

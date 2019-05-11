@@ -32,6 +32,7 @@ const MyProfilePage = (props) => <ProfileComponent objUser={objUser} />;
 const CategoriesPage = (props) => <CategoriesComponent arrCategories={arrCategories} />;
 const AboutPage = (props) => <AboutComponent />;
 const HomePage = (props) => <PostsComponent arrPosts={arrPosts} />;
+// const HomePage = (props) => <PostsComponent />;
 
 // application entry component
 class App extends React.Component {

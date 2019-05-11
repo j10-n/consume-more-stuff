@@ -10,10 +10,13 @@ class PostsComponent extends Component {
   render() {
     const arrPosts = this.props.arrPosts;
     return (
-      <div id='posts' bg="dark" variant="dark">
-        {(arrPosts || []).map(item => (
-          <CardComponent key={item.id} post={item} />
-        ))}
+      <div id='postsPanel'>
+        <h1>My Posts</h1>
+        <div id='posts' bg="dark" variant="dark">
+          {(arrPosts || []).map(item => (
+            <CardComponent key={item.id} post={item} />
+          ))}
+        </div>
       </div>
     );
   }

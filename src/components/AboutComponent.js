@@ -3,19 +3,15 @@ import SinglePanel from "./SinglePanel";
 import SideBySidePanels from "./SideBySidePanels";
 
 class AboutComponent extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const arrBE_Stack = ["ExpressJS", "knexJS", "bookshelfJS", "passportJS"];
     const arrFE_Stack = ["ReactJS", "Bootstrap", "Auth0", "mailGun"];
     const leftPanel = { h1: 'Front End Stack', arrList: arrFE_Stack };
     const rightPanel = { h1: 'Back End Stack', arrList: arrBE_Stack };
     const aboutPanel = { h1: 'About CMS', description: 'asdfalsdflksflksjdflkjsdflkjsdf  sdflkjsdf sdflkj sdf' };
-    console.log('index: leftPanel', leftPanel);
-    console.log('index: rightPanel', rightPanel);
-    console.log('index: aboutPanel', aboutPanel);
+    // console.log('index: leftPanel', leftPanel);
+    // console.log('index: rightPanel', rightPanel);
+    // console.log('index: aboutPanel', aboutPanel);
     // console.log('this.props', this.props);
     // const leftPanel = this.props.leftPanel;
     // const rightPanel = this.props.rightPanel;
