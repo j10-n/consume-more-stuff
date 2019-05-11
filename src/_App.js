@@ -31,16 +31,16 @@ console.log('objUser', objUser);
 const MyProfilePage = (props) => <ProfileComponent objUser={objUser} />;
 const CategoriesPage = (props) => <CategoriesComponent arrCategories={arrCategories} />;
 const AboutPage = (props) => <AboutComponent />;
-let HomePage = (props) => <PostsComponent arrPosts={arrPosts} />;
-//  HomePage = (props) => <PostsComponent />;
+// const HomePage = (props) => <PostsComponent arrPosts={arrPosts} />;
+const HomePage = (props) => <PostsComponent />;
 
 // application entry component
 class App extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
   }
+
   render() {
-    console.log('Data entering app: ',this.props);
     return (
       <Router>
         <div>

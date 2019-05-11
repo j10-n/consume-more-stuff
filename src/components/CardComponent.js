@@ -13,7 +13,9 @@ class CardComponent extends Component {
     let cardImage;
     let cardHeader;
     if (image) {
-      cardImage = <Card.Img variant="top" src={image} alt="" className="rounded-circle cardImage" />
+      console.log('Image: ',image);
+      // image = image+"/171x180";
+      cardImage = <Card.Img className='cardImage' variant="top" src={image} alt="" className="rounded-circle cardImage" />
     }
     if (header) {
       cardHeader = <Card.Header className='cardHeader'>{header}</Card.Header>

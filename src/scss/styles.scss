@@ -1,6 +1,6 @@
 html,
 body {
-  box-sizing: border-box;
+  box-sizing: content-box;
   width: 100%;
 }
 // Color Scheme
@@ -123,6 +123,14 @@ NavLink{
     font-size-adjust: 0.5;
     background:darken( $card, 10% );
   }
+  .cardTitle{
+    color:blue;
+    font-weight: 700;
+    text-align:center;
+    font-size:36px;
+    font-size-adjust: 0.5;
+    background:darken( $card, 10% );
+  }
   .cardBody{
     background: white;
     color: gray;
@@ -163,4 +171,9 @@ NavLink{
   align-items: center;
   align-content: center;
   background: lightgoldenrodyellow !important;
+}
+image, .cardImage {
+  max-width: 100%;
+  height: auto;
+  width: 200px;
 }

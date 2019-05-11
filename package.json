@@ -29,7 +29,6 @@
     "express": "^4.16.4",
     "express-session": "^1.16.1",
     "html-webpack-plugin": "^3.2.0",
-    "http-proxy-middleware": "^0.19.1",
     "jquery": "^3.4.1",
     "knex": "^0.16.5",
     "mailgun": "^0.5.0",
@@ -48,7 +47,7 @@
   "devDependencies": {
     "prettier": "^1.17.0"
   },
-  "proxy": "http://localhost:3000",
+  "proxy": "http://localhost:8080",
   "nodemonConfig": {
     "watch": [
       "server"
