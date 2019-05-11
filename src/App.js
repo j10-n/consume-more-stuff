@@ -13,6 +13,7 @@ class App extends Component {
     this.state = {
       posts: []
     };
+    this.handleSubmit=this.handleSubmit.bind(this)
   }
 
   getPosts() {
@@ -22,7 +23,7 @@ class App extends Component {
         return res.json(res);
       })
       .then(body => {
-        console.log("body", body);
+        // console.log("body", body);
 
         this.setState({ posts: body.data });
       });
@@ -32,10 +33,23 @@ class App extends Component {
     this.getPosts();
   }
 
+  handleSubmit(){
+    // console.log("suck a long dohnut")
+    fetch("/api/auth/login", {
+      method: 'POST', 
+      body: JSON.stringify(this),
+      headers:{
+        'Content-Type': 'apllication/json'
+      }
+    }).then(res => res.json())
+    .then(response => console.log('Success:', JSON.stringify(response)))
+    .catch(error => console.error ('Error:', error));
+  }
+
   render() {
-    console.log("state", this.state);
+    // console.log("state", this.state);
     let arr = this.state.posts;
-    console.log(arr);
+    // console.log(arr);
 
     // const { posts } = this.props;
     // let propData = props;
@@ -45,6 +59,9 @@ class App extends Component {
 
     return (
       <div name="App">
+        <div>
+          <Login props={this.handleSubmit}></Login>
+        </div>
         <div>
           {arr.map(post => (
             <Post

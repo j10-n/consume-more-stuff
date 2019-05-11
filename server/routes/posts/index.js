@@ -7,7 +7,7 @@ router
     return new req.database.Post()
       .fetchAll()
       .then(posts => {
-        console.log("posts", posts);
+        // console.log("posts", posts);
         // let data = [];
         let arr = posts.models;
         // for (var i = 0; i < arr.length; i++) {
@@ -58,7 +58,7 @@ router.post("/edit/:id", (req, res) => {
   let userId = req.body.userId;
   let created_at = req.body.created_at;
   let updated_on = req.body.updated_on;
-  console.log("title", title);
+  // console.log("title", title);
   return new req.database.Post({
     id: postId,
     image,

@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../logo.svg";
+import logo, { ReactComponent } from "../logo.svg";
 import "../App.css";
 import "../login.css";
 
@@ -15,7 +15,8 @@ import "../vendor/bootstrap/jquery/jquery.slim.js";
 import "../vendor/bootstrap/jquery/jquery.min.js";
 import "../vendor/bootstrap/jquery/jquery.min.map";
 
-function Login() {
+function Login({props}) {
+  console.log(props)
   return (
     <div className="Login">
       <div className="container">
@@ -24,11 +25,12 @@ function Login() {
             <div className="card card-signin my-5">
               <div className="card-body">
                 <h5 className="card-title text-center">Sign In</h5>
-                <form className="form-signin">
+                <form className="form-signin" action="/api/auth/login" method="POST">
                   <div className="form-label-group">
                     <input
                       type="email"
                       id="inputEmail"
+                      name="email"
                       className="form-control"
                       placeholder="Email address"
                       required
@@ -40,6 +42,7 @@ function Login() {
                   <div className="form-label-group">
                     <input
                       type="password"
+                      name="password"
                       id="inputPassword"
                       className="form-control"
                       placeholder="Password"
@@ -64,6 +67,8 @@ function Login() {
                   <button
                     className="btn btn-lg btn-primary btn-block text-uppercase"
                     type="submit"
+                    onClick={()=>props.handleSubmit}
+                    
                   >
                     Sign in
                   </button>

@@ -91,7 +91,8 @@ passport.serializeUser((user, done) => {
     "/auth/login",
     passport.authenticate("local", { failureRedirect: "/" }),
     (req, res) => {
-      console.log("You Have Succesfully Logged In");
+
+      console.log("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&You Have Succesfully Logged In");
       //grab the user on record
       //compare req.body.password to password on record
       res.redirect("/gallery");
