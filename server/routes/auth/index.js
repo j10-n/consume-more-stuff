@@ -29,11 +29,13 @@ passport.deserializeUser((user, done) => {
 
 passport.use(
   new LocalStrategy({ usernameField: "email" }, (email, password, done) => {
+    console.log("emailddddd", email);
     console.log("lcoal is being called");
     Users.where({ email })
       .fetch()
       .then(user => {
         user = user.toJSON();
+        console.log("Uzer", user);
         // if (user.password === password) {
         //   done(null, user);
         // } else {
@@ -96,12 +98,27 @@ router.post(
   "/auth/login",
   passport.authenticate("local", { failureRedirect: "/" }),
   (req, res) => {
+    const email = req.body.email;
+    // Users.where({ email });
+    req.session.user = req.body;
+    let user = req.body;
+    console.log("sesshan", req.session);
+    Users.where({ email })
+      .fetch()
+      .then(user => {});
+    req.logIn(user, err => {
+      if (err) {
+        return next(err);
+      } else {
+        console.log("sdfads");
+      }
+    });
     console.log(
       "&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&You Have Succesfully Logged In"
     );
+    res.redirect("/");
     //grab the user on record
     //compare req.body.password to password on record
-    res.redirect("/");
   }
 );
 
