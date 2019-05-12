@@ -4,7 +4,7 @@ exports.up = function(knex, Promise) {
     table.string("image");
     table.string("title");
     table.string("description");
-    table.integer("genre");
+    table.string("genre");
     table.integer("userId");
     table.string("created_at");
     table.string("updated_on");
