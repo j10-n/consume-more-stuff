@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Card } from 'react-bootstrap';
-import '../scss/styles.scss';
+import { Card } from "react-bootstrap";
+import "../scss/styles.scss";
 
 class CardComponent extends Component {
   constructor(props) {
@@ -8,37 +8,54 @@ class CardComponent extends Component {
   }
 
   render() {
-    const { id, userId, genre, header, title, description, image} = this.props.post;
+    const {
+      id,
+      userId,
+      genre,
+      header,
+      title,
+      description,
+      image
+    } = this.props.post;
 
     let cardImage;
     let cardHeader;
     if (image) {
-      console.log('Image: ',image);
+      console.log("Image: ", image);
       // image = image+"/171x180";
-      cardImage = <Card.Img className='cardImage' variant="top" src={image} alt="" className="rounded-circle cardImage" />
+      cardImage = (
+        <Card.Img
+          className="cardImage"
+          variant="top"
+          src={image}
+          alt=""
+          className="rounded-circle cardImage"
+        />
+      );
     }
     if (header) {
-      cardHeader = <Card.Header className='cardHeader'>{header}</Card.Header>
-    };
+      cardHeader = <Card.Header className="cardHeader">{header}</Card.Header>;
+    }
     return (
-      <div className='cardObj' bg="dark" variant="dark">
-        <Card className='card' style={{ width: '18rem', border: '1px solid red' }}>
+      <div className="cardObj">
+        <Card className="card">
           {cardHeader}
           {cardImage}
-          <Card.Body className='cardBody'>
-            <Card.Title className='cardTitle'>{title}</Card.Title>
-            <Card.Subtitle className="mb-2 text-muted cardS">{genre}</Card.Subtitle>
-            <Card.Text className='cardText'>
-              {description}
-            </Card.Text>
+          <Card.Body className="cardBody">
+            <Card.Title className="cardTitle">{title}</Card.Title>
+            <Card.Subtitle
+              className="mb-2 text-muted cardS"
+              style={{ textAlign: "center" }}
+            >
+              {genre}
+            </Card.Subtitle>
+            <Card.Text className="cardText">{description}</Card.Text>
           </Card.Body>
-          <Card.Footer className='cardFooter'>
+          <Card.Footer className="cardFooter">
             <span>
               <button>Edit</button>
             </span>
-            <span>
-              UserId:{userId}
-            </span>
+            <span>UserId:{userId}</span>
           </Card.Footer>
         </Card>
       </div>
