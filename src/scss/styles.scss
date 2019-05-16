@@ -1,5 +1,6 @@
 html,
 body {
+<<<<<<< HEAD
   /*
   box-sizing: border-box;
   width: 100%;
@@ -32,6 +33,14 @@ body {
 }
 
 #root {
+=======
+  box-sizing: content-box;
+  background: white;
+  margin: 0px;
+}
+
+#root {
+>>>>>>> 34d51babe0e08493d37b8e4e64293974531f1a17
   background: white;
   font-family: "Heebo", sans-serif;
 }
@@ -129,6 +138,7 @@ Navbar {
   text-align: center;
 }
 
+<<<<<<< HEAD
 
 //  .card {
 //   margin: 15px;
@@ -169,6 +179,8 @@ Navbar {
 //     justify-content: space-between;
 //   }
 // }
+=======
+>>>>>>> 34d51babe0e08493d37b8e4e64293974531f1a17
 #postsPanel {
   display: flex;
   flex-flow: column nowrap;
@@ -242,7 +254,12 @@ Navbar {
   justify-content: center;
   align-content: center;
 }
+<<<<<<< HEAD
 #singlePanel, .profilePage, #postDetailsPage {
+=======
+#singlePanel,
+.profilePage {
+>>>>>>> 34d51babe0e08493d37b8e4e64293974531f1a17
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
@@ -255,6 +272,7 @@ image,
   height: auto;
   width: 200px;
 }
+<<<<<<< HEAD
 .buttonGroup {
   display: flex;
   flex-flow: row nowrap;
@@ -271,3 +289,5 @@ image,
     margin-bottom: 10px;
   }
 }
+=======
+>>>>>>> 34d51babe0e08493d37b8e4e64293974531f1a17
