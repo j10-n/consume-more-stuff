@@ -1,5 +1,75 @@
+import React from 'react';
+import ErrorBoundary from './components/ErrorBoundary';
+
+
+import AdminComponent from './components/AdminComponent';
+import CategoriesComponent from './components/CategoriesComponent';
+import PostsComponent from './components/PostComponents/PostsComponent/PostsComponent';
+import PostDetailsComponent from './components/PostComponents/PostDetailsComponent/PostDetailsComponent';
+import PostDetailsAddEditComponent from './components/PostComponents/PostDetailsAddEditComponent/PostDetailsAddEditComponent';
+import ProfileDisplayComponent from './components/ProfileComponents/ProfileDisplayComponent/ProfileDisplayComponent';
+import ContactComponent from './components/ContactComponent';
+import AboutComponent from './components/AboutComponent/AboutComponent';
+import LoginComponent from './components/LoginComponent';
+// import AppState from './components/AppState';
+// views using sample data
+const MyProfilePage = (props) => <ProfileDisplayComponent {...props} />;
+const CategoriesPage = (props) => <CategoriesComponent  {...props} />;
+const AboutPage = (props) => <AboutComponent  {...props} />;
+let HomePage = (props) => <PostsComponent  {...props} />;
+let PostDetailsPage = (props) => <PostDetailsComponent {...props} />;
+let PostDetailsAddEditPage = (props) => <PostDetailsAddEditComponent  {...props} />;
 
 export const arrHeaders = ["Home", "My Profile", "Contacts","About", "Login"];
+
+export const arrRoutes = [
+  {
+    exact:true,
+    path: '/',
+    component: HomePage
+  },
+  {
+    exact:false,
+    path: '/about',
+    component: AboutPage
+  },{
+    exact:false,
+    path: '/contact',
+    component: ContactComponent
+  },{
+    exact:false,
+    path: '/posts/:userId',
+    component: HomePage
+  },{
+    exact:true,
+    path: '/postDetails/:id',
+    component: PostDetailsPage
+  },{
+    exact:false,
+    path: '/postDetails/Add',
+    component: PostDetailsAddEditPage
+  },{
+    exact:true,
+    path: '/postDetails/:id',
+    component: PostDetailsAddEditPage
+  },{
+    exact:false,
+    path: '/users/:id',
+    component: MyProfilePage
+  },{
+    exact:false,
+    path: '/genres',
+    component: CategoriesPage
+  },{
+    exact:false,
+    path: '/admin',
+    component: AdminComponent
+  },{
+    exact:false,
+    path: '/login',
+    component: LoginComponent
+  }
+];
 
 export const arrCategories = ["Classical", "House", "Home Made", "Nature Sounds", "Silence"];
 
@@ -43,7 +113,6 @@ export const arrPosts = [
     header: '',
     title: 'this is the 2',
     description: 'this has no header',
-    image: './../public/images/SaiLo_100x160.jpg',
     genre: 'genre',
     userId: 1
   }, {
@@ -51,7 +120,6 @@ export const arrPosts = [
     header: 'test header',
     title: 'this is the 3',
     description: 'this is the description',
-    image: './../../public/images/SaiLo_100x160.jpg',
     genre: 'genre',
     userId: 1
   }, {

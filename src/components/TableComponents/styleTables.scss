@@ -1,0 +1,42 @@
+@import '../../scss/colors';
+
+.tableHeaderComponent tr th{
+  background-color: $dark;
+  border-bottom: 2px solid $red;
+}
+
+Table {
+  border: 1px solid $primary;
+  TableHeaderComponent{
+    border-bottom: 2px solid $blue;
+  }
+}
+.tableVertical {
+  /* Vertical table has headings on left side   */
+  border: 3px solid blue;
+  margin-bottom: 15px;
+  padding: 2px;
+  thead th{
+    border-bottom: 2px solid blue;
+    color: blue;
+    background: lighten(cornflowerblue, 20%);
+  }
+  tbody th{
+    vertical-align: top;
+  }
+}
+
+.buttonGroup {
+  margin-bottom: 15px;
+  max-width: 50%;
+  align-self: center;
+}
+
+.flexRow{
+  display: flex;
+  flex-flow: row nowrap;
+}
+.flexCol, .flexColumn{
+  display: flex;
+  flex-flow: column nowrap;
+}

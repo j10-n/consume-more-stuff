@@ -1,0 +1,50 @@
+$card: yellow;
+
+.card {
+  margin: 15px;
+  // padding: 15px;
+  background: $card;
+  .cardHeader{
+    color:blue;
+    font-weight: 700;
+    text-align:center;
+    font-size:36px;
+    font-size-adjust: 0.5;
+    background:darken( $card, 10% );
+  }
+  .cardTitle{
+    color:blue;
+    font-weight: 700;
+    text-align:center;
+    font-size:36px;
+    font-size-adjust: 0.5;
+    background:darken( $card, 10% );
+  }
+  .cardBody{
+    background: white;
+    color: gray;
+    .cardText{
+      color: blue;
+    }
+    padding: 10px;
+  }
+  .cardFooter{
+    background: lightgray;
+    color: darkolivegreen;
+    text-align:right;
+    font-size: 18px;
+    padding: 5px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    .flexRow{
+      display: flex;
+      flex-flow: row nowrap;
+    }
+  }
+}
+
+.flexRow{
+  display: flex;
+  flex-flow: row nowrap;
+}

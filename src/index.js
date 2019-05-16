@@ -1,69 +1,54 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, NavLink, Route, Switch, Redirect, Prompt } from 'react-router-dom';
-
-import './scss/styles.scss';
-import AdminComponent from './components/AdminComponent';
-import HeaderComponent from './components/HeaderComponent';
-import CategoriesComponent from './components/CategoriesComponent';
-import PostsComponent from './components/PostsComponent';
-import ProfileComponent from './components/ProfileComponent';
-import ContactComponent from './components/ContactComponent';
-import AboutComponent from './components/AboutComponent';
-import LoginComponent from './components/LoginComponent';
+import { BrowserRouter as Router,  Route, Switch } from 'react-router-dom';
+import NavbarComponent from './components/NavbarComponent/NavbarComponent';
+import ErrorBoundary from './components/ErrorBoundary';
 
 // sample data (header info not really being used)
 import {
   arrHeaders,
-  arrUsers,
-  arrPosts,
-  arrCategories
+  // arrUsers,
+  arrRoutes,
+  // arrPosts,
+  // arrCategories
 } from './feSettings.js';
 
-// import AppState from './components/AppState';
-
-console.log("arrPosts", arrPosts);
-console.log("arrCategories", arrCategories);
-
-// views using sample data
-const objUser = arrUsers.filter(x => x.id == 1).pop();
-console.log('objUser', objUser);
-const MyProfilePage = (props) => <ProfileComponent objUser={objUser} />;
-const CategoriesPage = (props) => <CategoriesComponent arrCategories={arrCategories} />;
-const AboutPage = (props) => <AboutComponent />;
-let HomePage = (props) => <PostsComponent arrPosts={arrPosts} />;
-//  HomePage = (props) => <PostsComponent />;
 
 // application entry component
 class App extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      userId: 1
+    };
   }
   render() {
     console.log('Data entering app: ',this.props);
     return (
-      <Router>
-        <div>
-          <HeaderComponent {...arrHeaders} />
+      // <Router>
+        <div id='app'>
+          <NavbarComponent {...arrHeaders} userId={this.state.userId} />
           {/* Linking R O U T E S TO COMPONENTS */}
           <div className="views">
             <Switch>
-              <Route exact={true} path="/" component={HomePage} />
-              <Route path="/about" component={AboutPage} />
-              <Route path="/contact" component={ContactComponent} />
-              <Route path="/posts/:userId" component={HomePage} />
-              <Route path="/users/:id" component={MyProfilePage} />
-              <Route path="/genres" component={CategoriesPage} />
-              <Route path="/admin" component={AdminComponent} />
-              <Route path="/login" component={LoginComponent} />
-              <Route render={() => <h1>404 Error</h1>} />
+              {arrRoutes.map((route,idx) => (
+                // <ErrorBoundary>
+                <Route
+                  key={`${idx}`}
+                  exact={route.exact}
+                  path={route.path}
+                  component={route.component}
+                />
+                // </ErrorBoundary>
+              ))}
+              <Route key='lastxxx' render={() => <h1>404 Error</h1>} />
             </Switch>
           </div>
         </div>
-      </Router>
+      // </Router>
     );
   }
 }
 
+ReactDOM.render(<Router><App /></Router>, document.getElementById('root'));
 
-ReactDOM.render(<App />, document.getElementById('root'));

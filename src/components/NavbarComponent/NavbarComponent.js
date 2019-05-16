@@ -1,9 +1,16 @@
 import React, { Component } from "react";
 import { NavLink } from 'react-router-dom';
 import { Navbar, Nav } from 'react-bootstrap';
-import '../scss/styles.scss';
+import './styleNavbar.scss';
 
-class HeaderComponent extends Component {
+
+class NavbarComponent extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      userId: this.props.userId
+    }
+  }
   render() {
     // const arrHeaders = this.props;
 
@@ -35,4 +42,4 @@ class HeaderComponent extends Component {
     );
   }
 }
-export default HeaderComponent;
+export default NavbarComponent;

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import BulletList from "./BulletList";
-
-import '../scss/styles.scss';
+import '../../scss/styles.scss';
 
 class SideBySidePanels extends Component {
   constructor(props) {

@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 
 import { BrowserRouter as Router, NavLink, Route, Switch, Redirect, Prompt } from 'react-router-dom';
 
-import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap';
-import '../scss/styles.scss';
+// import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap';
+import '../../scss/styles.scss';
 
 class SinglePanel extends Component {
   constructor(props) {

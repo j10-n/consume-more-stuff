@@ -7,6 +7,7 @@ import ContactInfoComponent from './ContactInfoComponent';
 import '../scss/styles.scss';
 
 class ContactComponent extends Component {
+
   render() {
     return (
       <div>

@@ -1,10 +1,12 @@
 html,
 body {
-  box-sizing: content-box;
+  box-sizing: border-box;
   width: 100%;
+  margin:0;
+  padding:0;
+  background:blue;
 }
 // Color Scheme
-$card: yellow;
 
 
 #root {
@@ -14,12 +16,16 @@ $card: yellow;
   width: 100%;
   // background: lightgoldenrodyellow !important;
   background: rgb(134, 134, 109);
+  #app{
+    // background: orange;
+  }
   #header {
     top:0 !important;
     width:100% !important;
     text-decoration: none;
   }
 }
+
 /*
 #app{
     margin: 0;
@@ -52,40 +58,6 @@ h1 {
   text-align: center;
 }
 
-.links{
-  padding-bottom: 10px;
-  border-bottom: 1px solid #ddd;
-  margin-bottom: 20px;
-  color: rgb(133, 90, 11) !important;
-  .link{
-      color: rgb(245, 247, 241);
-      font-weight: 500;
-      text-decoration: none;
-      text-transform: uppercase;
-      padding: 5px 15px;
-
-      &:hover{
-          opacity: 0.75;
-          color:rgb(190, 202, 226);
-      }
-  }
-}
-
-.link.active{
-  color: yellow;
-  // text-decoration: underline;
-}
-Nav, NavLink, Navbar {
-  padding-bottom: 0px !important;
-  margin-bottom: 0px !important;
-}
-Nav{
-  border: 1px solid white !important;
-}
-NavLink{
-  // border: 1px solid red !important;
-  // color: rgb(133, 90, 11) !important;
-}
 .navbar{
   // border: 1px solid blue !important;
   display: flex;
@@ -101,55 +73,46 @@ NavLink{
   width: 100%;
 }
 
-#postsPanel{
-  display: flex;
-  flex-flow: column nowrap;
-  #posts {
-    // have 2-3 cards per row
-    display: flex;
-    flex-flow:row wrap;
-    justify-content: flex-start;
-  }
-}
- .card {
-  margin: 15px;
-  // padding: 15px;
-  background: yellow;
-  .cardHeader{
-    color:blue;
-    font-weight: 700;
-    text-align:center;
-    font-size:36px;
-    font-size-adjust: 0.5;
-    background:darken( $card, 10% );
-  }
-  .cardTitle{
-    color:blue;
-    font-weight: 700;
-    text-align:center;
-    font-size:36px;
-    font-size-adjust: 0.5;
-    background:darken( $card, 10% );
-  }
-  .cardBody{
-    background: white;
-    color: gray;
-    .cardText{
-      color: blue;
-    }
-    padding: 10px;
-  }
-  .cardFooter{
-    background: lightgray;
-    color: darkolivegreen;
-    text-align:right;
-    font-size: 18px;
-    padding: 5px;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-  }
-}
+
+//  .card {
+//   margin: 15px;
+//   // padding: 15px;
+//   background: yellow;
+//   .cardHeader{
+//     color:blue;
+//     font-weight: 700;
+//     text-align:center;
+//     font-size:36px;
+//     font-size-adjust: 0.5;
+//     background:darken( $card, 10% );
+//   }
+//   .cardTitle{
+//     color:blue;
+//     font-weight: 700;
+//     text-align:center;
+//     font-size:36px;
+//     font-size-adjust: 0.5;
+//     background:darken( $card, 10% );
+//   }
+//   .cardBody{
+//     background: white;
+//     color: gray;
+//     .cardText{
+//       color: blue;
+//     }
+//     padding: 10px;
+//   }
+//   .cardFooter{
+//     background: lightgray;
+//     color: darkolivegreen;
+//     text-align:right;
+//     font-size: 18px;
+//     padding: 5px;
+//     display: flex;
+//     flex-flow: row nowrap;
+//     justify-content: space-between;
+//   }
+// }
 
 .bulletList {
   display: flex;
@@ -164,7 +127,7 @@ NavLink{
   justify-content: center;
   align-content: center;
 }
-#singlePanel, .profilePage {
+#singlePanel, .profilePage, #postDetailsPage {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
@@ -176,4 +139,20 @@ image, .cardImage {
   max-width: 100%;
   height: auto;
   width: 200px;
+}
+.buttonGroup {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+}
+
+.buttonRow {
+  // border: 1px solid orange;
+  text-align: center;
+  // display: flex;
+  // justify-content: space-around;
+  background: rgb(99, 122, 122);
+  Button{
+    margin-bottom: 10px;
+  }
 }

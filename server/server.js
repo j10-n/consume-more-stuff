@@ -9,7 +9,8 @@ const REDIS_HOSTNAME = process.env.REDIS_HOSTNAME;
 
 //routes
 const userRoutes = require("./routes/users/index");
-const postRoutes = require("./routes/posts/index");
+const postRoutes = require("./routes/routePosts");
+const postDetailsRoutes = require("./routes/routePostDetails");
 const genreRoutes = require("./routes/genres/index");
 
 //authorization shite
@@ -40,6 +41,7 @@ app.use(decorator);
 //route for users, posts,genres
 app.use("/users", userRoutes);
 app.use("/posts", postRoutes);
+app.use("/postDetails", postDetailsRoutes);
 app.use("/genres", genreRoutes);
 app.use("/", postRoutes);
 

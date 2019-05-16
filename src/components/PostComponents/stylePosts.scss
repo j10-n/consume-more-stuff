@@ -1,0 +1,67 @@
+#postsPanel{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  .posts {
+    // have 2-3 cards per row
+    display: flex;
+    flex-flow:row wrap;
+    justify-content: flex-start;
+  }
+}
+
+
+#postDetailsPage {
+  h1{
+    color: blue;
+  }
+  border: 1px solid blue;
+  .card {
+    border: 1px solid blue;
+    padding: 2px;
+  }
+  Form {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    Button {
+      margin-right: 2px;
+      margin-left: 2px;
+    }
+  }
+}
+
+#postDetailsAddEditPage{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+#tablePostDetailsAddEdit {
+  h1{
+    color: blue;
+  }
+  border: 3px solid blue;
+  margin-bottom: 15px;
+  padding: 2px;
+  th{
+    vertical-align: bottom;
+  }
+  thead th{
+    border-bottom: 2px solid blue;
+    color: blue;
+    background: lighten(cornflowerblue, 20%);
+  }
+  tbody {
+    background: lighten(cornflowerblue, 30%);
+  }
+}
+
+.flexRow{
+  display: flex;
+  flex-flow: row nowrap;
+}
+.flexCol, .flexColumn{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}

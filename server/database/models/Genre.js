@@ -5,7 +5,10 @@ class Genre extends bookshelf.Model {
     return "genres";
   }
   get hasTimestamps() {
-    return false;
+    return true;
+  }
+  get hasMany(){
+    return['Post','genreId','id']
   }
 }
 

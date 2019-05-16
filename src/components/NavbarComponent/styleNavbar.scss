@@ -1,0 +1,35 @@
+
+.links{
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 20px;
+  color: rgb(133, 90, 11) !important;
+  .link{
+      color: rgb(245, 247, 241);
+      font-weight: 500;
+      text-decoration: none;
+      text-transform: uppercase;
+      padding: 5px 15px;
+
+      &:hover{
+          opacity: 0.75;
+          color:rgb(190, 202, 226);
+      }
+  }
+}
+
+.link.active{
+  color: yellow;
+  // text-decoration: underline;
+}
+Nav, NavLink, Navbar {
+  padding-bottom: 0px !important;
+  margin-bottom: 0px !important;
+}
+Nav{
+  border: 1px solid white !important;
+}
+NavLink{
+  // border: 1px solid red !important;
+  // color: rgb(133, 90, 11) !important;
+}

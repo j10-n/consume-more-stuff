@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import BulletList from './BulletList';
+import BulletList from './AboutComponent/BulletList';
 import '../scss/styles.scss';
 
 class CategoriesComponent extends Component {
@@ -34,12 +34,12 @@ class CategoriesComponent extends Component {
 
     let arrCategories = this.props.arrCategories;
     arrCategories = this.state.arrCategories;
-    arrCategories.map(x=>x.name);
+    const arrList = arrCategories.map(x=>x.name).sort();
     console.log("CategoriesComponent:props: ", this.props);
-    console.log("CategoriesComponent:arrCategories: ", arrCategories);
+    console.log("CategoriesComponent:arrList: ", arrList);
     return (
       <div id='categories' bg="dark" variant="dark">
-        <BulletList h1='Genres' arrList={arrCategories} />
+        <BulletList h1='Genres' arrList={arrList} />
       </div>
     );
   }

@@ -16,7 +16,7 @@ router
   })
   .post((req, res) => {
     let name = req.body.name;
-    console.log(name);
+    // console.log(name);
     return new req.database.Genre({ name })
       .save()
       .then(genres => {

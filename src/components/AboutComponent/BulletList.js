@@ -5,15 +5,18 @@ class BulletList extends Component {
     super(props);
   }
   render() {
-    let arrList = this.props.arrList;
+    const compareNames = (a, b)=>{return a -b};
+    let arrList = this.props.arrList.sort(compareNames);
     const h1 = this.props.h1;
-    console.log("h1", h1);
+    console.log("this.props", this.props);
     return (
       <div className='bulletList'>
         <h1>{h1}</h1>
         <ul>
-          {(arrList || []).map(item => (
-            <li key={item}>{item}</li>
+          {(arrList || [])
+            .sort(compareNames)
+            .map((item,idx) => (
+            <li key={idx}>{item}</li>
           ))}
         </ul>
       </div>
