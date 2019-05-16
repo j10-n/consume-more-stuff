@@ -7,7 +7,7 @@ router
     return new req.database.User()
       .fetchAll()
       .then(users => {
-        res.send(users);
+        // res.send(users);
         return res.json(users);
       })
       .catch(err => {

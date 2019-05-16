@@ -12,6 +12,7 @@ const userRoutes = require("./routes/users/index");
 const postRoutes = require("./routes/routePosts");
 const postDetailsRoutes = require("./routes/routePostDetails");
 const genreRoutes = require("./routes/genres/index");
+const authRoutes = require("./routes/auth/index");
 
 //authorization shite
 const session = require("express-session");
@@ -38,11 +39,29 @@ app.use(bodyParser.json({ extended: true }));
 // decorate request with database
 app.use(decorator);
 
+//authorization middleware
+app.use(
+  session({
+    store: new RedisStore({
+      host: "localhost",
+      port: 6379,
+      url: process.env.REDIS_HOSTNAME
+    }),
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false
+  })
+);
+app.use(passport.initialize());
+app.use(passport, session());
+
 //route for users, posts,genres
 app.use("/users", userRoutes);
 app.use("/posts", postRoutes);
 app.use("/postDetails", postDetailsRoutes);
 app.use("/genres", genreRoutes);
+app.use("/api", authRoutes);
+// app.use("/login", authRoutes);
 app.use("/", postRoutes);
 
 // start server

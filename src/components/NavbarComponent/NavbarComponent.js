@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { NavLink } from 'react-router-dom';
 import { Navbar, Nav } from 'react-bootstrap';
 import './styleNavbar.scss';
+import "../scss/styles.scss";  //need to reconcile scss
 
 
 class NavbarComponent extends Component {
@@ -17,20 +18,35 @@ class NavbarComponent extends Component {
     // const arrHeaders = ["Home", "My Posts", "My Profile", "About", "Login"];
     // console.log("arrHeaders: ", arrHeaders);
     return (
-      <Navbar id='header' bg="dark" variant="dark">
-        <Nav >
+      <Navbar id="header" bg="dark" variant="dark">
+        <Nav>
           {/*(arrHeaders || []).map(item => (
             <NavLink to="/"{item} className="link">{item}</NavLink>
           ))*/}
           <span className="mr-auto links">
-            <NavLink exact to="/" className="link" activeClassName="active">Home</NavLink>
+            <div className="navTitle">
+              <NavLink exact to="/" className="link">
+                The Archive
+              </NavLink>
+            </div>
+            <NavLink exact to="/" className="link" activeClassName="active">
+              Home
+            </NavLink>
             {/*<NavLink to="/posts/:userId" className="link">My Posts</NavLink>*/}
-            <NavLink to="/users/:id" className="link">My Profile</NavLink>
-            <NavLink to="/genres" className="link">Genres</NavLink>
-            <NavLink to="/about" className="link">About</NavLink>
+            <NavLink to="/users/:id" className="link">
+              My Profile
+            </NavLink>
+            <NavLink to="/genres" className="link">
+              Genres
+            </NavLink>
+            <NavLink to="/about" className="link">
+              About
+            </NavLink>
           </span>
-          <span bg="blue" id='nav-login' className="ml-auto links">
-            <NavLink to="/login" className="link">Login</NavLink>
+          <span bg="blue" id="nav-login" className="ml-auto links">
+            <NavLink to="/login" className="link">
+              Login
+            </NavLink>
           </span>
         </Nav>
         {/*}
@@ -42,4 +58,8 @@ class NavbarComponent extends Component {
     );
   }
 }
+<<<<<<< HEAD:src/components/NavbarComponent/NavbarComponent.js
 export default NavbarComponent;
+=======
+export default HeaderComponent;
+>>>>>>> 34d51babe0e08493d37b8e4e64293974531f1a17:src/components/HeaderComponent.js

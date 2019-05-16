@@ -1,5 +1,6 @@
 html,
 body {
+  /*
   box-sizing: border-box;
   width: 100%;
   margin:0;
@@ -24,6 +25,15 @@ body {
     width:100% !important;
     text-decoration: none;
   }
+*/
+  box-sizing: content-box;
+  background: white;
+  margin: 0px;
+}
+
+#root {
+  background: white;
+  font-family: "Heebo", sans-serif;
 }
 
 /*
@@ -46,8 +56,7 @@ body {
 h1 {
   text-align: center;
 }
-#categories{
-  border: 1px solid rgb(172, 197, 172);
+#categories {
   // background: rgb(175, 202, 192);
 
   background: lightgoldenrodyellow !important;
@@ -58,19 +67,66 @@ h1 {
   text-align: center;
 }
 
-.navbar{
+.links {
+  padding: 10px;
+  .link {
+    color: rgb(245, 247, 241);
+    font-weight: 500;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 5px 15px;
+    text-align: center;
+
+    &:hover {
+      opacity: 0.75;
+      color: rgb(190, 202, 226);
+    }
+  }
+}
+
+.link.active {
+  color: lighten(blue, 40%);
+  // text-decoration: underline;
+}
+
+.navTitle {
+  color: white;
+  display: inline-block;
+  padding-right: 30px;
+  font-weight: bold;
+  font-size: 30px;
+  .link.active {
+    color: white;
+  }
+}
+nav,
+NavLink,
+Navbar {
+  padding-bottom: 0px !important;
+  margin-bottom: 0px !important;
+}
+#nav-login {
+  display: flex;
+  a.link {
+    padding: 10px;
+    text-align: center;
+  }
+}
+.navbar {
   // border: 1px solid blue !important;
   display: flex;
   flex-flow: row nowrap;
-  padding: 0 0;
+  background-color: black;
   width: 100%;
+  text-align: center;
 }
-.navbar-nav{
+.navbar-nav {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   margin-bottom: 0 !important;
   width: 100%;
+  text-align: center;
 }
 
 
@@ -113,6 +169,65 @@ h1 {
 //     justify-content: space-between;
 //   }
 // }
+#postsPanel {
+  display: flex;
+  flex-flow: column nowrap;
+  #posts {
+    // have 2-3 cards per row
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+  }
+}
+.card:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+}
+.card {
+  padding: 15px;
+  background: lighten(#595f72, 40%);
+  margin: 15px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.5s ease-in-out;
+
+  .cardHeader {
+    color: black;
+    font-weight: 700;
+    text-align: center;
+    font-size: 36px;
+    font-size-adjust: 0.5;
+  }
+  .cardTitle {
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
+    background: white;
+  }
+  .cardBody {
+    background: white;
+    color: black;
+    border-bottom: none;
+    padding: 10px;
+    text-align: left;
+    height: 100px;
+    width: 200px;
+    margin: 0px;
+  }
+  .cardFooter {
+    background: lightgray;
+    color: black;
+    text-align: right;
+    font-size: 18px;
+    padding: 5px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  }
+  .cardText {
+    color: black;
+    margin: 0px;
+  }
+}
 
 .bulletList {
   display: flex;
@@ -130,12 +245,12 @@ h1 {
 #singlePanel, .profilePage, #postDetailsPage {
   display: flex;
   flex-flow: column nowrap;
-  justify-content: center;
   align-items: center;
   align-content: center;
   background: lightgoldenrodyellow !important;
 }
-image, .cardImage {
+image,
+.cardImage {
   max-width: 100%;
   height: auto;
   width: 200px;
